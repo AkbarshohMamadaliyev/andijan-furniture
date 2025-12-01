@@ -1,0 +1,68 @@
+.subcategory {
+  padding: 8px 4px;
+}
+
+.subcategory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.subcategory-title {
+  font-size: 16px;
+}
+
+.subcategory-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--success-color);
+  font-weight: 500;
+}
+
+.add-subcategory {
+  font-size: 14px;
+}
+
+.subcategory-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.subcategory-table thead th {
+  color: var(--secondary-color);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--secondary-color);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.subcategory-table tbody td {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 0;
+  text-align: center;
+}
+
+.subcategory-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.subcategory-img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.edit-subcategory {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.delete-subcategory {
+  color: var(--danger-color);
+  cursor: pointer;
+}

@@ -1,0 +1,36 @@
+.layout {
+  width: 100%;
+  background: var(--background-color);
+}
+
+.layout-main {
+  padding-top: 64px;
+  padding-bottom: 12px;
+}
+
+.layout-content {
+  margin: 14px 14px 0 14px;
+  padding: 20px;
+  min-height: calc(100vh - 90px);
+  border-radius: 14px;
+  background: var(--light-color);
+  transition: margin-left 0.3s ease-in-out;
+}
+
+@media (min-width: 769px) {
+  .content-with-sidebar {
+    margin-left: 280px;
+  }
+
+  .content-no-sidebar {
+    margin-left: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout-content {
+    margin-left: 14px;
+    margin-right: 14px;
+    padding: 20px;
+  }
+}

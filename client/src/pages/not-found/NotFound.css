@@ -1,0 +1,35 @@
+.error {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.error-code {
+  font-size: 128px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.error-message {
+  font-size: 20px;
+  color: var(--dark-color);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.error-button {
+  width: 14%;
+}
+
+@media (max-width: 768px) {
+  .error-code {
+    font-size: 100px;
+  }
+
+  .error-button {
+    width: 42%;
+  }
+}

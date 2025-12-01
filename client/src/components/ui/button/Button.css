@@ -1,0 +1,28 @@
+.app-button {
+  width: 100%;
+  padding: 10px;
+  background: var(--success-color);
+  color: var(--light-color);
+  border: none;
+  outline: none;
+  border-radius: 34px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.app-button.primary {
+  background: var(--primary-color);
+}
+
+.app-button.secondary {
+  background: var(--secondary-color);
+}
+
+.app-button.success {
+  background: var(--success-color);
+}
+
+.app-button.danger {
+  background: var(--danger-color);
+}
