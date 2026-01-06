@@ -4,7 +4,7 @@ import { urlencoded } from "body-parser";
 import cors from "cors";
 import path from "path";
 
-import sequelize from "./config/database";
+import sequelize from "./config/db";
 import { initAdmin } from "./helpers/initAdmin.helper";
 import { errorMiddleware } from "./middlewares/error.middleware";
 import Relations from "./models/relations";
@@ -59,7 +59,7 @@ const startServer = async () => {
   try {
     await sequelize.authenticate();
     console.log("Database connected successfully");
-    await sequelize.sync({force: true});
+    await sequelize.sync({ force: true });
     console.log("Models connected successfully");
     // await Product.sync({ force: true });
 

@@ -1,10 +1,13 @@
 import { Admin } from "../models/auth.model";
+import { AuthDto } from "../dtos/auth.dto";
 import { CustomError } from "../helpers/customError.helper";
 import { compareHashPassword } from "../helpers/bcrypt.helper";
 import { generateAccessToken } from "../helpers/jwt.helper";
 
 export const authService = {
-  async login(email: string, password: string) {
+  async login(data: AuthDto) {
+    const { email, password } = data;
+
     const admin = await Admin.findOne({ where: { email: email }, raw: true });
     if (!admin)
       throw new CustomError(

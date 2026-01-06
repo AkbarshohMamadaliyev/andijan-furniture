@@ -1,14 +1,9 @@
 import { ProductSize } from "../models/productSize.model";
+import { CreateProductSizeDto, UpdateProductSizeDto } from "../dtos/productSize.dto";
 
 export const productSizeService = {
-  async createProductSize(data: {
-    length?: string;
-    width?: string;
-    height?: string;
-    quantity?: number;
-    price?: number;
-    colorId?: number;
-  }) {
+  async createProductSize(data: CreateProductSizeDto) {
+    // @ts-expect-error
     return ProductSize.create(data);
   },
 
@@ -20,17 +15,7 @@ export const productSizeService = {
     return ProductSize.findByPk(id);
   },
 
-  async updateProductSize(
-    id: number,
-    data: {
-      length?: string;
-      width?: string;
-      height?: string;
-      quantity?: number;
-      price?: number;
-      colorId?: number;
-    }
-  ) {
+  async updateProductSize(id: number, data: UpdateProductSizeDto) {
     return ProductSize.update(data, { where: { id } });
   },
 

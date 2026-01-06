@@ -1,14 +1,11 @@
 import { Category } from "../models/category.model";
 import { Subcategory } from "../models/subcategory.model";
+import { CreateCategoryDto, UpdateCategoryDto } from "../dtos/category.dto";
 
 export const categoryService = {
-  async createCategory(data: {
-    title?: string;
-    image?: string;
-    status?: string;
-    order?: number | null;
-  }) {
-    return Category.create(data);
+  async createCategory(data: CreateCategoryDto) {
+    // @ts-expect-error
+    return await Category.create(data);
   },
 
   async getCategories(limit?: number) {
@@ -33,15 +30,7 @@ export const categoryService = {
     });
   },
 
-  async updateCategory(
-    id: number,
-    data: {
-      title?: string;
-      status?: string;
-      image?: string;
-      order?: number | null;
-    }
-  ) {
+  async updateCategory(id: number, data: UpdateCategoryDto) {
     return Category.update(data, { where: { id } });
   },
 

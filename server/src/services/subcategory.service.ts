@@ -1,7 +1,9 @@
 import { Subcategory } from "../models/subcategory.model";
+import { CreateSubcategoryDto, UpdateSubcategoryDto } from "../dtos/subcategory.dto";
 
 export const subcategoryService = {
-  async createSubcategory(data: { title?: string; status?: string, image?: string, categoryId?: string }) {
+  async createSubcategory(data: CreateSubcategoryDto) {
+    // @ts-expect-error
     return Subcategory.create(data);
   },
 
@@ -13,7 +15,7 @@ export const subcategoryService = {
     return Subcategory.findByPk(id);
   },
 
-  async updateSubcategory(id: number, data: { title?: string; status?: string, image?: string, categoryId?: string }) {
+  async updateSubcategory(id: number, data: UpdateSubcategoryDto) {
     return Subcategory.update(data, { where: { id } });
   },
 

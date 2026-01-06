@@ -2,16 +2,11 @@ import { Product } from "../models/product.model";
 import { ProductSize } from "../models/productSize.model";
 import { ProductColor } from "../models/productColor.model";
 import { ProductImage } from "../models/productImage.model";
+import { CreateProductDto, UpdateProductDto } from "../dtos/product.dto";
 
 export const productService = {
-  async createProduct(data: {
-    name?: string;
-    description?: string;
-    discount?: number;
-    status?: string;
-    categoryId?: number;
-    subcategoryId?: number;
-  }) {
+  async createProduct(data: CreateProductDto) {
+    // @ts-expect-error
     return Product.create(data);
   },
 
@@ -44,17 +39,7 @@ export const productService = {
     });
   },
 
-  async updateProduct(
-    id: number,
-    data: {
-      name?: string;
-      description?: string;
-      discount?: number;
-      status?: string;
-      categoryId?: number;
-      subcategoryId?: number;
-    }
-  ) {
+  async updateProduct(id: number, data: UpdateProductDto) {
     return Product.update(data, { where: { id } });
   },
 

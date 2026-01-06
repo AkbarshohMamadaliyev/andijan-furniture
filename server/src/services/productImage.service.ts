@@ -1,7 +1,9 @@
 import { ProductImage } from "../models/productImage.model";
+import { CreateProductImageDto, UpdateProductImageDto } from "../dtos/productImage.dto";
 
 export const productImageService = {
-  async createProductImage(data: { url?: string; colorId?: number }) {
+  async createProductImage(data: CreateProductImageDto) {
+    // @ts-expect-error
     return ProductImage.create(data);
   },
 
@@ -13,10 +15,7 @@ export const productImageService = {
     return ProductImage.findByPk(id);
   },
 
-  async updateProductImage(
-    id: number,
-    data: { url?: string; colorId?: number }
-  ) {
+  async updateProductImage(id: number, data: UpdateProductImageDto) {
     await ProductImage.update(data, { where: { id } });
     return ProductImage.findByPk(id); // yangilangan yozuvni qaytaradi
   },

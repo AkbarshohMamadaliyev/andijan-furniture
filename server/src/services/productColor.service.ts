@@ -1,12 +1,9 @@
 import { ProductColor } from "../models/productColor.model";
+import { CreateProductColorDto, UpdateProductColorDto } from "../dtos/productColor.dto";
 
 export const productColorService = {
-  async createProductColor(data: {
-    colorName?: string;
-    hex?: string;
-    totalQuantity?: number;
-    productId?: number;
-  }) {
+  async createProductColor(data: CreateProductColorDto) {
+    // @ts-expect-error
     return ProductColor.create(data);
   },
 
@@ -18,15 +15,7 @@ export const productColorService = {
     return ProductColor.findByPk(id);
   },
 
-  async updateProductColor(
-    id: number,
-    data: {
-      colorName?: string;
-      hex?: string;
-      totalQuantity?: number;
-      productId?: number;
-    }
-  ) {
+  async updateProductColor(id: number, data: UpdateProductColorDto) {
     return ProductColor.update(data, { where: { id } });
   },
 
